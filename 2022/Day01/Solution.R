@@ -1,5 +1,5 @@
 input = read.csv(
-  "InputDay1.csv",
+  "Input.csv",
   header = FALSE,
   blank.lines.skip = FALSE
 )
