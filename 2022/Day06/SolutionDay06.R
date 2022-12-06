@@ -3,7 +3,7 @@ input = read.delim(
   header = FALSE
 )$V1
 
-start_of_packet_market = function (signal, marker_length) {
+start_of_packet_marker = function (signal, marker_length) {
   for (i in 1:(nchar(input)-marker_length)) {
     
     marker = strsplit(input,"")[[1]][i:(i+marker_length-1)]
@@ -17,7 +17,7 @@ start_of_packet_market = function (signal, marker_length) {
 }
 
 # Part 1 Answer
-print(start_of_packet_market(input, 4))
+print(start_of_packet_marker(input, 4))
 
 # Part 2 Answer
-print(start_of_packet_market(input, 14))
+print(start_of_packet_marker(input, 14))
