@@ -4,12 +4,12 @@ input = read.delim(
 )$V1
 
 start_of_packet_marker = function (signal, marker_length) {
-  for (i in 1:(nchar(input)-marker_length)) {
+  for (i in 1:(nchar(input)-marker_length+1)) {
     
     marker = strsplit(input,"")[[1]][i:(i+marker_length-1)]
     
     if (all(table(strsplit(input,"")[[1]][i:(i+marker_length-1)]) == 1)) {
-      answer = i + marker_length -1
+      answer = i + marker_length - 1
       
       return(answer)
     }
